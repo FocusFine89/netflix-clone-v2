@@ -12,3 +12,7 @@ body {
   height: 300px;
   object-fit: cover;
 }
+
+.btn-service {
+  width: 200px;
+}
