@@ -6,6 +6,7 @@ import Gallery from "./components/Gallery";
 import Home from "./components/Home";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Gallery titolo="Trending Now" film="Harry Potter"/>
         <Gallery titolo="Watch it Again" film="Star Wars"/>
         <Gallery titolo="New Releases" film="Spongebob"/>
+        <ProfilePage/>
         <FootBar/>
       </header>
     </div>
