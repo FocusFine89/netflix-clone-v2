@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Spinner } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import React from "react";
 import Slider from "react-slick";
@@ -44,7 +44,7 @@ class Gallery extends Component{
                 },
             ]
         },
-        isLoad:true
+        
        
     }
     
@@ -53,6 +53,7 @@ class Gallery extends Component{
         fetch("http://www.omdbapi.com/?i=tt3896198&apikey=6538f3d5&s="+ nomeFilm)
         .then(response=>{
             if(response.ok){
+                
                 return response.json()
             }else{
                 throw new Error("Errore nella Richiesta al Server, Riprova più Tardi!")
@@ -75,7 +76,7 @@ class Gallery extends Component{
         return(
             <div className="text-white d-flex flex-column justify-content-between mb-5">
                 <p className="h1"> {titolo} </p>
-                
+                    {this.state.gallery.length===0 &&  <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>} 
                     <Slider {...this.state.settings}>
                            {
                             this.state.gallery.map(films=>{
